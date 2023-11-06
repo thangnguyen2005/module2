@@ -6,7 +6,7 @@
     echo "hợp lệ";
  }
  else {
-    echo " không hợp lệ";
+    echo "không hợp lệ";
  }
 
 ?>

@@ -2,8 +2,8 @@
  $pattern = '/^[CAP]\d{4}[GHIKLM]$/';
  $class = "C0318G";
  if (preg_match($pattern, $class)) {
-     echo "dung roi";
+     echo "hợp lệ";
  } 
  else {
-     echo "sai roi";
+     echo "không hợp lệ";
  }
