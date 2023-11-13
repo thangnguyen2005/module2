@@ -11,7 +11,7 @@ $id = isset( $_GET['id'] ) ? $_GET['id'] : 0;
 if( !$id ){
     header("Location: index.php");
 }
-$sql = "SELECT * FROM loaihangs WHERE MALOAIHANG  = $id";
+$sql = "SELECT * FROM khoahocs WHERE ID  = $id";
 $stmt = $conn->query($sql);
 $stmt->setFetchMode(PDO::FETCH_ASSOC);//array 
 // Lay ve du lieu duy nhat
@@ -26,10 +26,13 @@ if( $_SERVER['REQUEST_METHOD'] == "POST" ){
     // print_r( $_REQUEST );
     // die();
     // 
-    $TENLOAIHANG = $_REQUEST['TENLOAIHANG'];
+    $TENKHOAHOC = $_REQUEST['TENKHOAHOC'];
+    $NGAYBATDAU = $_REQUEST['NGAYBATDAU'];
+    $NGAYKETTHUC = $_REQUEST['NGAYKETTHUC'];
+
   
 
-    $sql = "UPDATE loaihangs SET TENLOAIHANG = '$TENLOAIHANG' WHERE MALOAIHANG = $id";
+    $sql = "UPDATE khoahocs SET TENKHOAHOC = '$TENKHOAHOC', `NGAYBATDAU` ='$NGAYBATDAU', `NGAYKETTHUC` = '$NGAYKETTHUC' WHERE ID = $id";
      //Thuc hien truy van
      $conn->exec($sql);
 
@@ -47,15 +50,15 @@ if( $_SERVER['REQUEST_METHOD'] == "POST" ){
 
       ?>
 
-<h2>THÊM MẶT HÀNG</h2>
+<h2>Sửa khóa học</h2>
 
-<form action="" method="POST" >
-  <label for="fname">Tên hàng</label><br>
-  <input type="text"  name="TENLOAIHANG" value="<?= $row['TENLOAIHANG'];?>"><br>
-
- 
-  <input type="submit" value="Submit">
-</form> 
+<form action="" method="POST">
+    <label for="fname">Tên khóa học</label><br>
+    <input type="text" name="TENKHOAHOC" value="<?= $row['TENKHOAHOC']; ?>"><br>
+    <input type="date" name="NGAYBATDAU" value="<?= $row['NGAYBATDAU']; ?>"><br>
+    <input type="date" name="NGAYKETTHUC" value="<?= $row['NGAYKETTHUC']; ?>"><br>
+    <input type="submit" value="Submit">
+</form>
 
 
 <?php 

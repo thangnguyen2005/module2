@@ -1,9 +1,7 @@
 <?php
-define('ROOT_URL','http://localhost/module3_new/');
-define('ROOT_DIR', dirname(__FILE__) );
 $username   = 'root';
 $password   = '';
-$database   = 'case_study';
+$database   = 'baithuchanh';
 try {
     $conn = new PDO('mysql:host=localhost;dbname='.$database, $username, $password);
 } catch (Exception $e) {

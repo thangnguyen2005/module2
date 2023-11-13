@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Tables</title>
+    <title>Quản lý học sinh</title>
 
     <!-- Custom fonts for this template -->
     <link href="http://localhost/bai9/public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
